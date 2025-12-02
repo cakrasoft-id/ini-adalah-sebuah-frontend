@@ -1,0 +1,216 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* CakraSoft Custom Theme */
+:root {
+  /* Brand Colors */
+  --cakra-purple: #6B21A8;
+  --cakra-purple-light: #7C3AED;
+  --cakra-gold: #F59E0B;
+  --cakra-gold-light: #FBBF24;
+  --cakra-black: #0F0F0F;
+  --cakra-dark: #1F2937;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--cakra-purple) 0%, var(--cakra-purple-light) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--cakra-gold) 0%, var(--cakra-gold-light) 100%);
+  --gradient-dark: linear-gradient(180deg, var(--cakra-black) 0%, var(--cakra-dark) 100%);
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--cakra-black);
+  color: #f3f4f6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cakra-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cakra-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cakra-purple-light);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--cakra-purple);
+  color: white;
+}
+
+/* Gradient Text Utility */
+.text-gradient-purple {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient Background Utilities */
+.bg-gradient-purple {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-gold {
+  background: var(--gradient-gold);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(107, 33, 168, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(107, 33, 168, 0.6);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(107, 33, 168, 0.2);
+}
+
+/* Button Styles */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(107, 33, 168, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: 2px solid var(--cakra-purple);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--cakra-purple);
+  transform: translateY(-2px);
+}
+
+/* Section Styling */
+.section-padding {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 6rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 7rem 2rem;
+  }
+}
+
+/* Grid Pattern Background */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(107, 33, 168, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107, 33, 168, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Dot Pattern Background */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(107, 33, 168, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
